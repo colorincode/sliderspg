@@ -5,6 +5,7 @@
     "*.ejs": ["parcel-transformer-ejs"],
     "*.hbs": ["parcel-transformer-handlebars"],
     "*.glsl *.frag .vert": ["@parcel/transformer-glsl"],
+   
     "files-to-bypass/*.*": ["parcel-transformer-bypass"]
   }
 }

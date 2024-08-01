@@ -1,6 +1,15 @@
 
 @use './helpers.scss' as *;
 
+// @import '../../node_modules/@awesome.me/kit-e56bb8c3d5/icons/scss/solid.scss';
+// // @import '../../node_modules/@awesome.me/kit-e56bb8c3d5/icons/scss/regular.scss';
+// @import '../../node_modules/@awesome.me/kit-e56bb8c3d5/icons/scss/brands.scss';
+// @import '../../node_modules/@awesome.me/kit-e56bb8c3d5/icons/scss/duotone.scss';
+// @import '../../node_modules/@awesome.me/kit-e56bb8c3d5/icons/scss/light.scss';
+// @import '../../node_modules/@awesome.me/kit-e56bb8c3d5/icons/scss/thin.scss';
+// @import '../../node_modules/@awesome.me/kit-e56bb8c3d5/icons/scss/animated.scss';
+@import url(../scss/);
+
 body {
     border: $devBorder;
 }

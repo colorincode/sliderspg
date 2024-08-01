@@ -30,7 +30,8 @@ export class Canvas extends Three {
     // loader.setPath(import.meta.env.BASE_URL)
     // loader.serviceWorker.register(new URL("../service-worker.js"))
     let img = document.createElement('img')
-     let src = new URL("../assets/image03.jpg?as=webp", import.meta.url).href
+    //  let src = new URL("../../assets/image03.jpg?as=webp", import.meta.url).href
+     let src = new URL("../../assets/watertexture-black.png?as=webp", import.meta.url).href
     img.src = src.toString()
 
   
@@ -67,9 +68,9 @@ export class Canvas extends Three {
       normal: () => (material.uniforms.uMode.value = 2),
       height: () => (material.uniforms.uMode.value = 3),
     }
-    gui.add(obj, 'color')
-    gui.add(obj, 'normal')
-    gui.add(obj, 'height')
+    // gui.add(obj, 'color')
+    // gui.add(obj, 'normal')
+    // gui.add(obj, 'height')
 
     return mesh
   }

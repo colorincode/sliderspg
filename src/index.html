@@ -5,16 +5,29 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Boilerplate</title>
-    <link rel="stylesheet" href="./scss/style.scss" />
-    <script type="module" src="./ts/app.ts" defer></script>
+    <link rel="stylesheet" href="./scss/style.scss" type="text/css">
+    <script type="module" src="./ts/app.ts" defer="" ></script>
+    <!-- <script src="../node_modules/@awesome.me/kit-e56bb8c3d5/index.js" crossorigin="anonymous" type="module" defer></script> -->
+
+
 
 </head>
 
 <body>
 <!-- begin header inject -->
-<include src="./header.html" ></include>
+<header class="test--global__headerwrapper">
+    <div class="test--global--icons--wrapper">
+        <a href="#" target="_blank"> sample
+        </a>
+    </div>
+</header>
+
+
 <!-- end header inject -->
-<a href="./apptest.html" ></a>
+<a href="./apptest.html"></a>
+<a href="./about/home.html">about</a>
+<a href="./projects.html">projects</a>
+
     <!-- lead section-->
     <body>
         <main>
@@ -29,6 +42,7 @@
         <!--placeholder only-->
         <p> &copy; Copyright $year 2023 | Color In Code </p>
     </footer>
+    <script src="https://kit.fontawesome.com/e56bb8c3d5.js" crossorigin="anonymous" type="module" ></script>
 </body>
 
 </html>

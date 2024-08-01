@@ -2,7 +2,11 @@
     "name": "colorincode-devsite",
     "browserslist": "> 0.5%, last 2 versions, not dead",
     "version": "1.0.8",
-    "source": "src/*.html",
+    "source": [
+        "src/$1",
+        "src/about/$1",
+        "./assets/$1"
+    ],
     "web": "dist/index.html",
     "license": "MIT",
     "private": true,
@@ -22,24 +26,28 @@
             "publicUrl": "./"
         },
         "production": {
-            "distDir": "./production/"
+            "distDir": "./production",
+            "publicUrl": "./"
         }
     },
     "scripts": {
         "build": "parcel build ./src/index.html --target web --no-optimize --no-source-maps",
-        "test": "yarn build src/index.html --reporter @parcel/reporter-bundle-analyzer r @parcel/reporter-bundle-buddy",
+        "test": "yarn build src/index.html --reporter @parcel/reporter-bundle-analyzer",
+        "lint": "eslint src/**/*.ts",
+        "analyze": "parcel build ./src/index.html --reporter @parcel/reporter-bundle-analyzer",
         "start": "parcel --open --no-cache ./src/index.html --target web --no-source-maps",
         "clear-cache": "rimraf --glob .parcel-cache/*",
         "clear-dist": "rimraf --glob dist/*",
         "remove-maps": "rimraf --glob dist/**/*.*.map",
         "clean": "npm run clear-dist && npm run clear-cache",
         "format": "prettier --write src/**/* --no-error-on-unmatched-pattern",
-        "production": "parcel build './src/*.html' --target production --no-cache --no-source-maps --no-content-hash"
+        "production": "parcel build src/index.html --target production"
     },
     "devDependencies": {
         "@parcel/bundler-library": "^2.11.1-canary.3149",
         "@parcel/compressor-gzip": "^2.12.0",
         "@parcel/diagnostic": "2.12.0",
+        "@parcel/namer-default": "^2.12.0",
         "@parcel/reporter-bundle-analyzer": "^2.12.0",
         "@parcel/reporter-bundle-buddy": "^2.12.0",
         "@parcel/reporter-cli": "^2.12.0",
@@ -54,8 +62,14 @@
         "@types/three": "^0.156.0",
         "@typescript-eslint/eslint-plugin": "^7.18.0",
         "parcel": "latest",
+        "parcel-namer-functional": "^0.1.3",
+        "parcel-namer-hashless": "^1.0.6",
+        "parcel-namer-relative-to-cwd": "^0.0.0-alpha.0",
+        "parcel-namer-rewrite": "^2.10.3-rc.2",
+        "parcel-reporter-static-files-copy": "^1.5.3",
         "parcel-transformer-bypass": "^1.0.0",
         "parcel-transformer-ejs": "^1.0.1",
+        "path-browserify": "^1.0.1",
         "postcss": "^8.4.32",
         "postcss-custom-properties": "^13.2.1",
         "postcss-import": "^16.1.0",
@@ -85,6 +99,7 @@
         "hsl-to-hex": "^1.0.0",
         "http-proxy-middleware": "^3.0.0",
         "jquery": "^3.7.0",
+        "lenis": "^1.1.9",
         "lil-gui": "^0.18.2",
         "posthtml": "^0.16.6",
         "three": "^0.167.0",
